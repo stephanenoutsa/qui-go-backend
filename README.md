@@ -2,6 +2,18 @@
 
 QG back-end sandbox project for recruitment purpose.
 
+## Steps to run the application
+
+1. Run `npm install`
+
+2. Add the following variables (and their values) to your OS environment variables:
+    * QUI_GO_USERNAME
+    * QUI_GO_PASSWORD
+    * QUI_GO_DATABASE
+    * JWT_SECRET (this could be any string...you could generate one online)
+
+3. Run `npm start:dev`
+
 ## exercise
 
 Build a secured API which allow to manage school classroom.
