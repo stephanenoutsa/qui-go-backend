@@ -1,0 +1,41 @@
+{
+  "plugins": ["node", "jest"],
+  "extends": ["eslint:recommended", "plugin:node/recommended", "standard", "loopback"],
+  "rules": {
+    "properties": "never",
+    "ignoreDestructuring": true,
+    "max-len": ["error", {"code": 150}],
+    "no-nested-ternary": "error",
+    "max-nested-callbacks": ["error", 3],
+    "max-lines": ["error", {"max": 250, "skipBlankLines": true, "skipComments": true}],
+    "max-depth": ["error", 5],
+    "complexity": ["error", 10],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "node/no-unsupported-features/es-syntax": "warn",
+    "node/no-unsupported-features/es-builtins": "warn",
+    "node/no-unpublished-require": ["error", {
+      "allowModules": [
+        "del",
+        "gulp",
+        "gulp-exec",
+        "nodemon",
+        "require-dir",
+        "rewire",
+        "proxyquire"
+      ]
+    }],
+    "camelcase": ["error", { "properties": "never" }]
+  },
+  "env": {
+    "jest/globals": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "globals": {
+    "require": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "qg-back-end-sbx",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "description": "QG back-end sandbox project for recruitment purpose.",
+  "contributors": [
+    {
+      "name": "Hervé NOUMBI",
+      "email": "herve.n@qui-go.com"
+    }
+  ],
+  "scripts": {
+    "lint": "eslint \"*/**/*.js\"",
+    "start:dev": "nodemon src/server.js",
+    "start": "node .",
+    "test": "jest --config test/jest.conf.js --runInBand  --forceExit --detectOpenHandles --passWithNoTests",
+    "test:coverage": "jest --config test/jest.conf.js --coverage --runInBand --forceExit --passWithNoTests",
+    "build": "node_modules/.bin/gulp build",
+    "install": "node ./tools/hook-setup-push.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "eslint": "^5.9.0",
+    "eslint-config-loopback": "^8.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-exec": "^3.0.2",
+    "jest": "^24.9",
+    "jest-cli": "^24.9",
+    "nodemon": "^1.18.7",
+    "proxyquire": "^2.1.0",
+    "require-dir": "^1.1.0",
+    "rewire": "^4.0.1",
+    "supertest": "^4.0.2"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=10"
+  }
+}
