@@ -1,6 +1,7 @@
 // Third party modules
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Private modules
 const sequelize = require('./utils/sequelize');
@@ -30,10 +31,11 @@ require('./services/v0/model.index');
     app.use((req, res, next) => {
       res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
       res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-      res.header('Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, HEAD');
+      res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, POST, DELETE, HEAD');
 
       next();
     });
+    app.options('*', cors());
 
     // V0 Endpoints
     app.use('/api/v0/', V0IndexRouter);
